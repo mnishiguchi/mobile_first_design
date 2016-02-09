@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  ng-app="app" >
 
 <head>
   <meta charset="UTF-8">
@@ -10,126 +12,18 @@
   </title>
 
   <link rel="stylesheet" href="css/desktop_first.css">
+
+  <!-- Load AngularJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.1/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.1/angular-route.min.js"></script>
+  <!-- Load app module -->
+  <script src="js/app.js"></script>
+  <script src="js/gallery-data.service.js"></script>
 </head>
 
 <body>
 
-  <header class="row">
-    <div class="wrapper">
-      <hgroup>
-        <h1 id="logo">Bees</h1>
-        <p>This is a website about bees</p>
-      </hgroup>
-
-      <nav>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Sources</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Links</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <div class="wrapper">
-
-    <div  class="row">
-      <div class="three-columns">
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-      </div>
-    </div>
-
-    <div  class="row">
-      <div class="five-columns">
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-        <figure>
-          <img src="http://placehold.it/80?text=a" alt="">
-          <div class="description">
-            <h4>Image title</h4>
-            <hr>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-          </div>
-        </figure>
-      </div>
-    </div>
-
-    <footer>
-      &copy; 2016 Masatoshi Nishiguchi
-    </footer>
-
-  </div><!-- /.wrapper -->
+  <ng-view></ng-view>
 
 </body>
 </html>

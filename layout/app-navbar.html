@@ -1,0 +1,26 @@
+<header class="row">
+  <div class="wrapper">
+    <hgroup ng-href="{{ $ctrl.paths[ 0 ] }}">
+      <h1 id="logo" >Bees</h1>
+      <p>This is a website about bees</p>
+    </hgroup>
+
+    <nav>
+      <ul>
+        <li
+          class="nav-item"
+          ng-repeat="label in $ctrl.labels track by $index"
+          ng-class="{ active: label === $ctrl.activeTab }" >
+
+          <a
+            ng-href="{{ $ctrl.paths[ $index ] }}"
+            ng-class="{ active: label === $ctrl.activeTab }"
+            class="nav-link">
+            {{ label }}
+          </a>
+
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

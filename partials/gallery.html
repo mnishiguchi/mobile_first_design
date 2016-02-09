@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="page gallery container">
+
+  <h1>Gallery</h1>
+
+  <div class="card-columns monkeys" >
+
+    <div class="card monkey" ng-repeat="monkey in vm.monkeys">
+
+      <!-- Image of a monkey -->
+      <a ng-href="{{ monkey.linkUrl }}">
+        <img
+          class="card-img-top"
+          ng-src="{{ monkey.imgUrl }}"
+          alt="{{ monkey.name }}"
+          title="{{ monkey.name }}"
+          style="width: 100%;" >
+      </a>
+
+      <!-- Name and description of a monkey -->
+      <div class="card-block">
+        <h4
+          class="card-title"
+          ng-if="monkey.name.length > 1">
+          {{ monkey.name }}
+        </h4>
+        <p
+          class="card-text"
+          ng-if="monkey.desc.length > 1">
+          {{ monkey.desc }}
+        </p>
+        <a
+          ng-if="monkey.linkUrl.length > 1"
+          ng-href="{{ monkey.linkUrl }}"
+          class="btn btn-primary">
+          Details
+        </a>
+      </div>
+
+    </div><!-- /.monkey -->
+
+  </div><!-- /.monkeys -->
+
+</div><!-- /.gallery -->

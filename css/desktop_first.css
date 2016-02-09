@@ -32,7 +32,6 @@ body {
   background: #ebeef4;
   width: 100%;
   height: 100%;
-  color: white;
   font-family: Helvetica, Arial, sans-serif;
 }
 /* Reset some propertyies so that we can adjust spacing easily. */
@@ -41,21 +40,16 @@ h1, h2, h3, h4, p {
   margin: 0;
   line-height: 1;
 }
-h1 {
-  font-size: 2.5em;
-}
-h2 {
-  font-size: 2.0em;
-}
-h3 {
-  font-size: 1.7em;
-}
-h4 {
-  font-size: 1.5em;
-}
-p {
+h1, h2, h3, h4 { color: #3b5998; }
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.7em; }
+h4 { font-size: 1.5em; }
+p  {
   font-size: 1.0em;
+  color: #6d84b4
 }
+
 a {
   color: white;
   text-decoration: none;
@@ -85,10 +79,12 @@ a:hover {
   font-size: 2.2em;
   font-family: Helvetica, Arial, sans-serif;
   letter-spacing: -1.2px;
+  color: white;
 }
 
 header {
   background: #3b5998;
+  color: white;
 }
 
 hgroup {
@@ -123,7 +119,10 @@ nav li a {
   height: 60px;
   padding: 0 12px;
 }
-
+nav li a.active {
+  color: white;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+}
 
 /*
   All figures
@@ -137,14 +136,12 @@ figure {
   padding: 10px;
 }
 figure h4 {
-  color: #3b5998;
   line-height: 1.2;
 }
 figure hr {
   margin: 5px 0;
 }
 figure p {
-  color: #6d84b4;
 }
 
 
