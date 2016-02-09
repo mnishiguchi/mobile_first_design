@@ -2,7 +2,7 @@
 
 
 /* This is to display borders */
-* { border: 1px dotted red }
+/** { border: 1px dotted red }*/
 
 
 /*
@@ -29,16 +29,39 @@ html {
 }
 body {
   position: relative;
-  background: white;
+  background: #ebeef4;
   width: 100%;
   height: 100%;
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
 }
 /* Reset some propertyies so that we can adjust spacing easily. */
 h1, h2, h3, h4, p {
   padding: 0;
   margin: 0;
   line-height: 1;
-  font-family: Georgia, serif;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2.0em;
+}
+h3 {
+  font-size: 1.7em;
+}
+h4 {
+  font-size: 1.5em;
+}
+p {
+  font-size: 1.0em;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: #afbdd4;
 }
 .wrapper {
   display: block;
@@ -52,27 +75,30 @@ h1, h2, h3, h4, p {
   overflow:auto;  /* This is to prevent the margin collapsing */
 }
 
-hr {
-  padding: 20px 0;
-}
-
 
 /*
   Header
  */
 
 
+#logo {
+  font-size: 2.2em;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: -1.2px;
+}
+
 header {
-  display: block;
-  background: #cdf;
-  margin-bottom: 40px;
-  overflow:auto;  /* This is to prevent the margin collapsing */
+  background: #3b5998;
 }
 
 hgroup {
   float: left;
   display: block;
   width: 40%;
+  margin: 4px 0;
+}
+hgroup p {
+  color: #eee;
 }
 
 nav {
@@ -80,20 +106,45 @@ nav {
   width: 60%;
   float: right;
 }
-
 nav ul {
   list-style: none;
   text-align: center;
   padding: 0;
   margin: 0 auto;
 }
-
 nav li {
   display: inline-block;
-  text-align: middle;
+}
+nav li a {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
   line-height: 60px;
   height: 60px;
-  padding: 0 10px;
+  padding: 0 12px;
+}
+
+
+/*
+  All figures
+*/
+
+
+figure {
+  float: left;
+  margin: 1%;
+  background: white;
+  padding: 10px;
+}
+figure h4 {
+  color: #3b5998;
+  line-height: 1.2;
+}
+figure hr {
+  margin: 5px 0;
+}
+figure p {
+  color: #6d84b4;
 }
 
 
@@ -102,17 +153,13 @@ nav li {
  */
 
 
-/* This removes unnecessary margin of first and last columns */
-.three-columns {
-  margin: 0 -1%;
-}
-
 .three-columns figure {
   width: 31.33%;
-  float: left;
-  margin: 10px 1% 10px 1%;
-
-  background: salmon;
+  margin: 1%;
+}
+/* This removes unnecessary margin of first and last columns */
+.three-columns {
+  margin: 0 -1.1%;
 }
 
 
@@ -120,16 +167,14 @@ nav li {
   .five-columns
  */
 
-/* This removes unnecessary margin of first and last columns */
-.five-columns {
-  margin: 0 -1%;
-}
 
 .five-columns figure {
   width: 18%;
-  float: left;
-  margin: 10px 1% 10px 1%;
-  background: green;
+  margin: 1%;
+}
+/* This removes unnecessary margin of first and last columns */
+.five-columns {
+  margin: 0 -1.1%;
 }
 
 
@@ -141,13 +186,14 @@ nav li {
 footer {
   display: block;
   clear: both;
-  background: #cdf;
   padding: 20px 0;
   overflow:auto;  /* This is to prevent the margin collapsing */
+  color: #3b5998;
+  border-top: 1px solid #afbdd4;
 }
 
 
-/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 
   .wrapper {
@@ -162,12 +208,13 @@ footer {
   nav {
     width: 100%;
   }
-
   nav li {
-    text-align: middle;
+    display: inline-block;
+  }
+  nav li a {
     line-height: 40px;
     height: 40px;
-    padding: 0 5px;
+    padding: 0 12px;
   }
 
   .three-columns figure {
@@ -178,4 +225,22 @@ footer {
     width: 98%;
   }
 
+  figure img {
+    width: 30%;
+    float: left;
+  }
+  figure .description {
+    width: 70%;
+    float: right;
+  }
+  .description {
+    padding-left: 10px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+  nav li {
+    display: block;
+  }
 }

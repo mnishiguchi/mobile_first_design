@@ -4,6 +4,15 @@
 
 ==
 
+## [The viewport meta tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+
+==
+
 ## Giving columns margins
 1. Place all the column items inside a row
 2. Each column has both left and right margins
@@ -41,3 +50,7 @@
   overflow:auto;  /* This is to prevent the margin collapsing */
 }
 ```
+
+### Facebook swatch
+
+http://colorswatches.info/facebook-blue/
