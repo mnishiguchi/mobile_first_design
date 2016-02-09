@@ -12,7 +12,7 @@
 
 
   //=============================================//
-  // Router configuration.
+  // Configuration.
   //=============================================//
 
 
@@ -31,11 +31,13 @@
 
       .when("/", {
           title:       "Home",
-          templateUrl: "partials/home.html"
+          templateUrl: "partials/home.html",
+          controller:   HomeController,
+          controllerAs: "vm",
       })
-      .when("/information", {
-          title:       "Information",
-          templateUrl: "partials/information.html"
+      .when("/description", {
+          title:       "Description",
+          templateUrl: "partials/description.html"
       })
       .when("/species", {
           title:       "Species",
@@ -86,26 +88,144 @@
   // View controllers.
   //=============================================//
 
-
   angular
     .module( "app" )
-    .controller( "GalleryController", GalleryController );
+    .controller( "HomeController", HomeController );
 
-    GalleryController.resolve = {
-      _data: function( GalleryData ) {
-        return GalleryData.getData();
-      }
-    };
+    HomeController.$inject = [];
 
-    GalleryController.$inject = [
-      "_data"
-    ];
+    function HomeController( _data ) {
 
-    function GalleryController( _data ) {
+      this.bees_1 = [
+        {
+          name: "Evolution",
+          imgUrl: "img/Amegilla_cingulata.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Evolution",
+          imgUrl: "img/fossil.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Evolution",
+          imgUrl: "img/Tetragonula_carbonaria.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+      ];
 
-      this.monkeys = _data;
+      this.bees_2 = [
+        {
+          name: "Ampulicidae",
+          imgUrl: "img/Ampulicidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Sphecidae",
+          imgUrl: "img/Sphecidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Crabroninae",
+          imgUrl: "img/Crabroninae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Bembicini ",
+          imgUrl: "img/Bembicini.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Nyssonini",
+          imgUrl: "img/Nyssonini.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Pemphredoninae",
+          imgUrl: "img/Pemphredoninae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Anthophila",
+          imgUrl: "img/Anthophila.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Melittidae",
+          imgUrl: "img/Melittidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Apidae",
+          imgUrl: "img/Apidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Megachilidae",
+          imgUrl: "img/Megachilidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Andrenidae",
+          imgUrl: "img/Andrenidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Halictidae",
+          imgUrl: "img/Halictidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Colletidae",
+          imgUrl: "img/Colletidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+        {
+          name: "Stenotritidae",
+          imgUrl: "img/Stenotritidae.jpg",
+          linkUrl: "_",
+          desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+        },
+      ];
 
-    } // end GalleryController
+    } // end HomeController
+
+
+  // angular
+  //   .module( "app" )
+  //   .controller( "GalleryController", GalleryController );
+
+  //   GalleryController.resolve = {
+  //     _data: function( GalleryData ) {
+  //       return GalleryData.getData();
+  //     }
+  //   };
+
+  //   GalleryController.$inject = [
+  //     "_data"
+  //   ];
+
+  //   function GalleryController( _data ) {
+
+  //     this.monkeys = _data;
+
+  //   } // end GalleryController
 
 
   angular
@@ -135,9 +255,8 @@
 
 
   /**
-   * The app navbar
-   * Controls app navigation and switches page contents when user clicks on
-   * a navigation link.
+   * The app navbar.
+   * - Switch page contents when the user clicks on a navigation link.
    */
   angular
     .module( "app" )
@@ -166,10 +285,10 @@
       vm.labels    = [];  // The same as the page title.
       vm.activeTab = "";  // The name of the active tab.
 
-      // Rejects trailing slash.
+      // Reject trailing slash.
       var pathRegex = /^\/\w*[^\/]$/;
 
-      // Extracts a list of paths and labels from routes info.
+      // Extract a list of paths and labels from routes info.
       angular.forEach( $route.routes, function( value, key ) {
 
         // If a valid path name is found, push to the lists.

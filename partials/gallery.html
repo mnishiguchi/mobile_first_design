@@ -4,42 +4,42 @@
 
   <h1>Gallery</h1>
 
-  <div class="card-columns monkeys" >
+  <div class="card-columns bees" >
 
-    <div class="card monkey" ng-repeat="monkey in vm.monkeys">
+    <div class="card bee" ng-repeat="bee in vm.bees">
 
-      <!-- Image of a monkey -->
-      <a ng-href="{{ monkey.linkUrl }}">
+      <!-- Image of a bee -->
+      <a ng-href="{{ bee.linkUrl }}">
         <img
           class="card-img-top"
-          ng-src="{{ monkey.imgUrl }}"
-          alt="{{ monkey.name }}"
-          title="{{ monkey.name }}"
+          ng-src="{{ bee.imgUrl }}"
+          alt="{{ bee.name }}"
+          title="{{ bee.name }}"
           style="width: 100%;" >
       </a>
 
-      <!-- Name and description of a monkey -->
+      <!-- Name and description of a bee -->
       <div class="card-block">
         <h4
           class="card-title"
-          ng-if="monkey.name.length > 1">
-          {{ monkey.name }}
+          ng-if="bee.name.length > 1">
+          {{ bee.name }}
         </h4>
         <p
           class="card-text"
-          ng-if="monkey.desc.length > 1">
-          {{ monkey.desc }}
+          ng-if="bee.desc.length > 1">
+          {{ bee.desc }}
         </p>
         <a
-          ng-if="monkey.linkUrl.length > 1"
-          ng-href="{{ monkey.linkUrl }}"
+          ng-if="bee.linkUrl.length > 1"
+          ng-href="{{ bee.linkUrl }}"
           class="btn btn-primary">
           Details
         </a>
       </div>
 
-    </div><!-- /.monkey -->
+    </div><!-- /.bee -->
 
-  </div><!-- /.monkeys -->
+  </div><!-- /.bees -->
 
 </div><!-- /.gallery -->

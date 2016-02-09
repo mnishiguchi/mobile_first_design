@@ -135,6 +135,9 @@ figure {
   background: white;
   padding: 10px;
 }
+figure img {
+  width: 100%;
+}
 figure h4 {
   line-height: 1.2;
 }
@@ -239,5 +242,17 @@ footer {
 @media only screen and (max-width : 480px) {
   nav li {
     display: block;
+  }
+  figure {
+    width: 100%;
+    display: block;
+  }
+  figure img {
+    width: 50%;
+  }
+  figure .description {
+    width: 100%;
+    display: block;
+    padding: 5px 0;
   }
 }

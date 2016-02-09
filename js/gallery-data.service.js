@@ -11,15 +11,15 @@
       // Return the API.
       return {
 
-        get: function() { return monkeys; }
+        get: function() { return items; }
 
       };
 
     } // end GalleryData
 
 
-    // The information on monkeys to be displayed in the gallery.
-    var monkeys = [
+    // The information to be displayed in the gallery.
+    var items = [
       {
         name: "Japanese macaque (日本猿)",
         imgUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/JapaneseMacaqueM2218.jpg/200px-JapaneseMacaqueM2218.jpg",
@@ -76,6 +76,5 @@
         desc: "flown to a height of 55 miles (89 km) by NASA in 1959"
       },
     ];
-
 
 })(); // end module
