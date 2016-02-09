@@ -41,7 +41,11 @@ h1, h2, h3, h4, p {
   line-height: 1;
 }
 h1, h2, h3, h4 { color: #3b5998; }
-h1 { font-size: 2.5em; }
+h1 {
+  font-family: Georgia, serif;
+  font-size: 2.5em;
+  padding-bottom: 20px;
+}
 h2 { font-size: 2.0em; }
 h3 { font-size: 1.7em; }
 h4 { font-size: 1.2em; }
@@ -57,16 +61,22 @@ a {
 a:hover {
   color: #afbdd4;
 }
+/* Adjust the block width responsively */
 .wrapper {
   display: block;
   width: 90%;
   margin: 0 auto ;
 }
+/* This is a section inside of the wrapper */
 .row {
   display: block;
   clear: both;
   margin-bottom: 40px;
-  overflow:auto;  /* This is to prevent the margin collapsing */
+  overflow: hidden;  /* This is to prevent the margin collapsing */
+}
+/* This is a special wrapper for a page content */
+.wrapper.page-content {
+  margin: 20px auto;
 }
 
 
@@ -75,26 +85,33 @@ a:hover {
  */
 
 
+.app-navbar {
+  background: #3b5998;
+  color: white;
+  display: block;
+  clear: both;
+  overflow: hidden;  /* This is to prevent the margin collapsing */
+}
+
 #logo {
   font-size: 2.2em;
   font-family: Helvetica, Arial, sans-serif;
   letter-spacing: -1.2px;
+  padding-bottom: 5px;
   color: white;
-}
-
-header {
-  background: #3b5998;
-  color: white;
+  cursor: default;  /* Default cursor instead of the finger pointing */
 }
 
 hgroup {
   float: left;
   display: block;
   width: 40%;
-  margin: 4px 0;
+  margin-top: 10px
 }
 hgroup p {
   color: #eee;
+  font-size: 0.9em;
+  padding-bottom: 5px;
 }
 
 nav {
@@ -115,14 +132,29 @@ nav li a {
   display: block;
   text-align: center;
   vertical-align: middle;
-  line-height: 60px;
-  height: 60px;
+  line-height: 80px;
+  height: 80px;
   padding: 0 12px;
 }
 nav li a.active {
   color: white;
   cursor: default;  /* Default cursor instead of the finger pointing */
 }
+
+
+/*
+  jumbotron
+*/
+
+
+#jumbotron {
+  display: block;
+  height: 300px;
+  background: url("../img/beehive.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 
 /*
   All figures
@@ -148,7 +180,6 @@ figure hr {
 }
 figure p {
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 
@@ -165,7 +196,9 @@ figure p {
 .three-columns {
   margin: 0 -1.1%;
 }
-
+.three-columns figure p {
+  height: 100px;
+}
 
 /*
   .five-columns
@@ -180,6 +213,9 @@ figure p {
 .five-columns {
   margin: 0 -1.1%;
 }
+.five-columns figure p {
+  height: 200px;
+}
 
 
 /*
@@ -191,9 +227,10 @@ footer {
   display: block;
   clear: both;
   padding: 20px 0;
-  overflow:auto;  /* This is to prevent the margin collapsing */
+  overflow: hidden;  /* This is to prevent the margin collapsing */
   color: #3b5998;
   border-top: 1px solid #afbdd4;
+  margin-top: 40px;
 }
 
 
@@ -236,11 +273,14 @@ footer {
   figure .description {
     width: 70%;
     float: right;
-  }
-  .description {
     padding-left: 10px;
   }
+
+  .five-columns figure p {
+    height: 80px;
+  }
 }
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
@@ -252,11 +292,18 @@ footer {
     display: block;
   }
   figure img {
-    width: 50%;
+    width: 200px;
   }
   figure .description {
     width: 100%;
     display: block;
     padding: 5px 0;
   }
+  .three-columns figure p {
+  height: 80px;
+  }
+  .five-columns figure p {
+    height: 80px;
+  }
+
 }

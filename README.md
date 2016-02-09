@@ -4,6 +4,11 @@
 
 ==
 
+## Thanks
+- http://imgur.com/gallery/fmiK6MM for a nice image of a beehive
+
+==
+
 ## [The viewport meta tag](https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag)
 
 ```html
@@ -40,17 +45,40 @@
 - Top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the margins combined into it, a behavior known as margin collapsing.
 
 ### Solution
-- Give each row the property `overflow:auto;`
+- Give each row the `overflow` property
 
 ```css
 .row {
   display: block;
   clear: both;
   margin-bottom: 40px;
-  overflow:auto;  /* This is to prevent the margin collapsing */
+  overflow: hidden;  /* This is to prevent the margin collapsing */
 }
 ```
 
 ### Facebook swatch
 
 http://colorswatches.info/facebook-blue/
+
+
+==
+
+## Dealing with overflowing text
+
+### Using Angular
+- Suitable for multiple lines
+
+```
+{{ longString | limitTo: 20 }} {{ longString.length < 20 ? '' : '...' }}
+```
+
+
+### Using CSS text-overflow property
+- Suitable for a single line
+
+```
+figure h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+```

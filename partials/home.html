@@ -2,13 +2,16 @@
 
 <div class="wrapper">
 
+  <!-- A big picture of a beehive -->
+  <header id="jumbotron">
+  </header>
+
   <div  class="row">
     <div class="three-columns">
-      <figure ng-repeat="bee in vm.bees_1">
+      <figure ng-repeat="bee in vm.bees">
 
         <a ng-href="{{ bee.linkUrl }}">
           <img
-            class="card-img-top"
             ng-src="{{ bee.imgUrl }}"
             alt="{{ bee.name }}"
             title="{{ bee.name }}" >
@@ -18,31 +21,7 @@
           <h4>{{ bee.name }}</h4>
           <hr>
           <p>
-            {{ bee.desc }}
-          </p>
-        </div>
-
-      </figure>
-    </div>
-  </div>
-
-  <div  class="row">
-    <div class="five-columns">
-      <figure ng-repeat="bee in vm.bees_2">
-
-        <a ng-href="{{ bee.linkUrl }}">
-          <img
-            class="card-img-top"
-            ng-src="{{ bee.imgUrl }}"
-            alt="{{ bee.name }}"
-            title="{{ bee.name }}" >
-        </a>
-
-        <div class="description">
-          <h4>{{ bee.name }}</h4>
-          <hr>
-          <p>
-            {{ bee.desc }}
+            {{ bee.desc | limitTo: 123 }} {{ bee.length < 123 ? '' : '...' }}
           </p>
         </div>
 

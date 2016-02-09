@@ -1,13 +1,32 @@
 <app-navbar></app-navbar>
 
-<div class="wrapper">
+<div class="wrapper page-content">
 
   <h1>Species</h1>
 
-  <p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, quaerat dolorum sit iure error tenetur ab cumque unde architecto minima labore rem voluptas vitae, magni saepe accusamus praesentium quas fugit.
-  </p>
+  <div  class="row">
+    <div class="five-columns">
+      <figure ng-repeat="bee in vm.bees">
 
+        <a ng-href="{{ bee.linkUrl }}">
+          <img
+            class="card-img-top"
+            ng-src="{{ bee.imgUrl }}"
+            alt="{{ bee.name }}"
+            title="{{ bee.name }}" >
+        </a>
+
+        <div class="description">
+          <h4>{{ bee.name }}</h4>
+          <hr>
+          <p>
+            {{ bee.desc | limitTo: 123 }} {{ bee.length < 123 ? '' : '...' }}
+          </p>
+        </div>
+
+      </figure>
+    </div>
+  </div>
   <app-footer></app-footer>
 
 </div>
