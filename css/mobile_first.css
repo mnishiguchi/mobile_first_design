@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+
+/* This is to display borders */
+/** { border: 1px dotted red }*/
+
+
+/*
+  App-wide common styles.
+ */
+
+
+/* Include this, at the beginning of the CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  position: relative;
+  min-height: 100%;
+}
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  position: relative;
+  background: #ebeef4;
+  width: 100%;
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/* Reset some propertyies so that we can adjust spacing easily. */
+h1, h2, h3, h4, p {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+h1, h2, h3, h4 { color: #3b5998; }
+h1 {
+  font-size: 2.5em;
+  padding-bottom: 20px;
+}
+h2 { font-size: 2.0em; }
+h3 { font-size: 1.7em; }
+h4 { font-size: 1.2em; }
+p  {
+  font-size: 1.0em;
+  line-height: 1.4;
+  color: #6d84b4
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: #afbdd4;
+}
+/* Adjust the block width responsively */
+.wrapper {
+  display: block;
+  width: 90%;
+  margin: 0 auto ;
+}
+/* This is a section inside of the wrapper */
+.row {
+  display: block;
+  clear: both;
+  margin-bottom: 40px;
+  overflow: hidden;  /* This is to prevent the margin collapsing */
+}
+/* This is a special wrapper for a page content */
+.wrapper.page-content {
+  margin: 20px auto;
+}
+
+
+/*
+  #app-navbar
+ */
+
+
+#app-navbar {
+  background: #3b5998; /* rgba(59, 89, 152, 0.6); */
+  color: white;
+  display: block;
+  clear: both;
+  overflow: hidden;  /* This is to prevent the margin collapsing */
+}
+#logo {
+  font-size: 2.2em;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: -1px;
+  padding-bottom: 5px;
+  color: white;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+}
+hgroup {
+  float: left;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+hgroup p {
+  color: #eee;
+  font-size: 0.9em;
+  padding-bottom: 5px;
+}
+nav {
+  display: block;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+}
+nav li {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #999;
+}
+nav li a {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  height: 40px;
+  padding: 0 12px;
+}
+nav li a.active {
+  background: none;
+  color: white;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+  background: #6d84b4;
+}
+nav li a:hover {
+  background: #293e6a;
+  color: white;
+}
+nav li a.active:hover {
+  background: #6d84b4;
+}
+.hamburger {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 32px;
+  height: 32px;
+  visibility: visible;
+}
+
+
+/*
+  jumbotron
+*/
+
+
+#jumbotron {
+  display: block;
+  height: 200px;
+  margin: 0 -10%;
+  background: url("../img/beehive.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+/*
+  footer
+ */
+
+
+footer {
+  display: block;
+  clear: both;
+  padding: 20px 0;
+  overflow: hidden;  /* This is to prevent the margin collapsing */
+  color: #3b5998;
+  border-top: 1px solid #afbdd4;
+  margin-top: 40px;
+}
+
+
+
+/*
+  All figures
+*/
+
+
+figure {
+  float: left;
+  margin: 1%;
+  background: white;
+  padding: 10px;
+}
+figure img {
+  width: 200px;
+}
+figure h4 {
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+figure hr {
+  margin: 5px 0;
+}
+figure p {
+  overflow: hidden;
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+
+  /*
+    #app-navbar
+   */
+
+
+  hgroup {
+    display: block;
+    margin-top: 10px;
+  }
+  hgroup p {
+    font-size: 0.9em;
+    padding-bottom: 5px;
+  }
+  nav {
+    display: block;
+    width: 100%;
+  }
+  nav ul {
+    display: block;
+  }
+  nav li {
+    display: inline-block;
+    width: auto;
+    border-top: none;
+  }
+  nav li a {
+    display: block;
+    line-height: 60px;
+    height: 60px;
+    padding: 0 12px;
+  }
+
+
+  /*
+    All figures
+  */
+
+
+  figure img {
+    width: 100%;
+  }
+
+
+  /*
+    .three-columns
+   */
+
+
+  .three-columns figure {
+    width: 31.33%;
+    margin: 1%;
+  }
+  .three-columns figure p {
+    height: 100px;
+  }
+
+
+  /*
+    .five-columns
+   */
+
+
+  .five-columns figure {
+    width: 31%;
+    margin: 1%;
+  }
+  .five-columns figure p {
+    height: 200px;
+  }
+
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+
+  /*
+    #app-navbar
+   */
+
+
+  hgroup {
+    display: inline-block;
+    margin-top: 10px;
+    width: 30%;
+    float: left;
+  }
+  hgroup p {
+    font-size: 0.9em;
+    padding-bottom: 5px;
+  }
+  nav {
+    display: inline-block;
+    width: 70%;
+    float: right;
+  }
+  nav ul {
+    display: block;
+  }
+  nav li {
+    display: inline-block;
+    width: auto;
+    border-top: none;
+  }
+  nav li a {
+    line-height: 80px;
+    height: 80px;
+    padding: 0 12px;
+  }
+
+  #jumbotron {
+    height: 300px;
+  }
+
+
+  /*
+    .five-columns
+   */
+
+
+  .five-columns figure {
+    width: 18%;
+    margin: 1%;
+  }
+  /* This removes unnecessary margin of first and last columns */
+  .five-columns {
+    margin: 0 -1.1%;
+  }
+  .five-columns figure p {
+    height: 200px;
+  }
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
