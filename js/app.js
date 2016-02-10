@@ -297,20 +297,43 @@
       vm.labels    = [];  // The same as the page title.
       vm.activeTab = "";  // The name of the active tab.
 
-      // Reject trailing slash.
+      // Control the hamburger button.
+      vm.isShownMenu = true;
+      vm.toggleMenu  = function() { vm.isShownMenu = ! vm.isShownMenu };
+
+      // Regex to filter out paths with trailing slash.
       var pathRegex = /^\/\w*[^\/]$/;
+
+      /*
+        // Inspect $route.routes
+        console.info( $route.routes );
+        ---
+        {
+          /             : { controller: HomeController(), title: "Home", ... }
+          /description  : { ... }
+          /description/ : { ... }  // invalid path
+          /resources    : { ... }
+          /resources/   : { ... }  // invalid path
+          /species      : { ... }
+          /species/     : { ... }  // invalid path
+          ...
+        }
+       */
 
       // Extract a list of paths and labels from routes info.
       angular.forEach( $route.routes, function( value, key ) {
 
         // If a valid path name is found, push to the lists.
         if ( key === "/" || key.match( pathRegex ) ) {
+
           vm.paths.push( "#" + key );
           vm.labels.push( value.title );
 
           // If the current path is found, remember the title as a active tab.
           if ( key === $location.path() ) {
+
             vm.activeTab = value.title;
+
           }
         }
 

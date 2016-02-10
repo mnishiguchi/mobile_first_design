@@ -1,13 +1,21 @@
 <div class="app-navbar">
   <div class="wrapper">
     <hgroup>
+
+      <!-- Hamburger button -->
+      <button type="button"
+         class="hamburger"
+         ng-click="$ctrl.toggleMenu()">
+        &#9776;
+      </button>
+
       <a ng-href="{{ $ctrl.paths[ 0 ] }}">
         <h1 id="logo">Bees</h1>
         <p>This is a website about bees</p>
       </a>
     </hgroup>
 
-    <nav>
+    <nav ng-show="$ctrl.isShownMenu">
       <ul>
         <li
           class="nav-item"

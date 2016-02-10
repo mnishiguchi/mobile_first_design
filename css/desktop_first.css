@@ -51,6 +51,7 @@ h3 { font-size: 1.7em; }
 h4 { font-size: 1.2em; }
 p  {
   font-size: 1.0em;
+  line-height: 1.4;
   color: #6d84b4
 }
 
@@ -140,7 +141,14 @@ nav li a.active {
   color: white;
   cursor: default;  /* Default cursor instead of the finger pointing */
 }
-
+.hamburger {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 32px;
+  height: 32px;
+  visibility: hidden;
+}
 
 /*
   jumbotron
@@ -304,6 +312,9 @@ footer {
   }
   .five-columns figure p {
     height: 80px;
+  }
+  .hamburger {
+    visibility: visible;
   }
 
 }
