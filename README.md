@@ -15,7 +15,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-
 ==
 
 ## Giving columns margins
@@ -52,7 +51,7 @@
   display: block;
   clear: both;
   margin-bottom: 40px;
-  overflow: hidden;  /* This is to prevent the margin collapsing */
+  overflow: hidden;    /* This is to prevent the margin collapsing */
 }
 ```
 
@@ -154,3 +153,31 @@ figure h4 {
 console.info( $window.innerWidth );
 console.info( $window.innerHeight );
 ```
+
+==
+
+## Clearfix
+- When elements are floating, the DOM consider that they do not have height.
+- Good idea to apply the clearfix technique after the end of the last floating element. 
+
+```css
+.clearfix {
+  clear: both;
+}
+```
+
+==
+
+## three.js
+
+- http://threejs.org/
+
+
+==
+
+## Font pairs
+
+- http://briangardner.com/google-font-combinations/
+- http://femmebot.github.io/google-type/
+- http://fontpair.co/
+

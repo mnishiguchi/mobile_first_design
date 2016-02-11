@@ -92,7 +92,8 @@
 
     function HomeController() {
 
-      this.bees = data_1;
+      this.data_1 = data_1;
+      this.data_2 = data_2;
 
     } // end HomeController
 
@@ -146,15 +147,16 @@
 
       var vm  = this;
 
-      vm.paths     = [];  // The "#" paths, e.g., "#/about".
-      vm.labels    = [];  // The same as the page title.
-      vm.activeTab = "";  // The name of the active tab.
+      vm.pages = [];      // path:  The "#" paths, e.g., "#/about".
+                          // title: The same as the page title.
+      vm.activeTab;       // The name of the active tab.
       vm.isMobile;        // The current display type.
       vm.isShownMenu;     // The visibility of hamburger button.
       vm.toggleMenu  = function() { vm.isShownMenu = ! vm.isShownMenu };
 
       // Initialize the state of the navbar.
       handleResizing();
+
 
       // Keep watch on window resizing.
       angular.element( $window ).on('resize', function() {
@@ -163,6 +165,7 @@
         $scope.$apply( function() { handleResizing(); });
 
       });
+
 
       // Regex to filter out paths with trailing slash.
       var pathRegex = /^\/\w*[^\/]$/;
@@ -181,14 +184,16 @@
         }
        */
 
-      // Extract a list of paths and labels from routes info.
+      // Extract paths from routes info.
       angular.forEach( $route.routes, function( value, key ) {
 
-        // If a valid path name is found, push to the lists.
+        // If a valid path name is found, push its data to the lists.
         if ( key === "/" || key.match( pathRegex ) ) {
 
-          vm.paths.push( "#" + key );
-          vm.labels.push( value.title );
+          vm.pages.push({
+             path:  "#" + key,
+             title: value.title
+          });
 
           // If the current path is found, remember the title as a active tab.
           if ( key === $location.path() ) { vm.activeTab = value.title; }
@@ -196,6 +201,11 @@
         }
 
       }); // end angular.forEach
+
+
+      // ---
+      // PRIVATE METHODS
+      // ---
 
 
       /**

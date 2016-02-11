@@ -8,7 +8,39 @@
 
   <div  class="row">
     <div class="three-columns">
-      <figure ng-repeat="bee in vm.bees">
+      <figure ng-repeat="bee in vm.data_1">
+
+        <a ng-href="{{ bee.linkUrl }}">
+          <img
+            ng-src="{{ bee.imgUrl }}"
+            alt="{{ bee.name }}"
+            title="{{ bee.name }}" >
+        </a>
+
+        <div class="description">
+          <h4>{{ bee.name }}</h4>
+          <hr>
+          <p>
+            {{ bee.desc | limitTo: 123 }} {{ bee.length < 123 ? '' : '...' }}
+          </p>
+
+          <a
+            ng-href="{{ bee.linkUrl }}"
+            class="read-more">
+            Read more
+          </a>
+        </div><!-- /.description -->
+
+      </figure>
+    </div>
+  </div>
+
+  <hr>
+
+  <div  class="row">
+    <div class="five-columns">
+
+      <figure ng-repeat="bee in vm.data_2">
 
         <a ng-href="{{ bee.linkUrl }}">
           <img
@@ -25,9 +57,19 @@
           </p>
         </div>
 
+        <a
+          ng-href="{{ bee.linkUrl }}"
+          class="read-more">
+          Read more
+        </a>
+
       </figure>
+
+      <div class="clearfix"></div>
+
     </div>
   </div>
+
 
   <app-footer></app-footer>
 

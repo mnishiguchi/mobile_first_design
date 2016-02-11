@@ -10,7 +10,7 @@
         &#9776;
       </button>
 
-      <a ng-href="{{ $ctrl.paths[ 0 ] }}">
+      <a ng-href="{{ $ctrl.pages[ 0 ].path }}">
         <h1 id="logo">Bees</h1>
         <p>This is a website about bees</p>
       </a>
@@ -18,16 +18,12 @@
 
     <nav ng-show="$ctrl.isShownMenu">
       <ul>
-        <li
-          ng-repeat="label in $ctrl.labels track by $index"
-          ng-class="{ active: label === $ctrl.activeTab }"
-          class="nav-item">
+        <li ng-repeat="page in $ctrl.pages track by $index" >
 
           <a
-            ng-href="{{ $ctrl.paths[ $index ] }}"
-            ng-class="{ active: label === $ctrl.activeTab }"
-            class="nav-link">
-            {{ label }}
+            ng-href="{{ page.path }}"
+            ng-class="{ active: page.title === $ctrl.activeTab }" >
+            {{ page.title }}
           </a>
 
         </li>
