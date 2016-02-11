@@ -1,11 +1,18 @@
 # Mobile first design
+Responsive grids of 3 columns and 5 columns.
+
 - Phase 1: Desktop first
 - Phase 2: Mobile first
 
 ==
 
 ## Thanks
+- http://rachidmrad.com/ for teaching me CSS tricks
 - http://imgur.com/gallery/fmiK6MM for a nice image of a beehive
+- https://en.wikipedia.org/wiki/Bee for bee info
+- https://angularjs.org/ for an awesome frond-end framework
+- http://colorswatches.info/facebook-blue/ for a nice color swatch
+- [Default Sizes for Twitter Bootstrap’s Media Queries](https://scotch.io/quick-tips/default-sizes-for-twitter-bootstraps-media-queries)
 
 ==
 
@@ -33,8 +40,6 @@
   width: 31.33%;
   float: left;
   margin: 10px 1% 10px 1%;
-
-  background: salmon;
 }
 ```
 
@@ -54,12 +59,6 @@
   overflow: hidden;    /* This is to prevent the margin collapsing */
 }
 ```
-
-### Facebook swatch
-
-- http://colorswatches.info/facebook-blue/
-- http://www.color-hex.com/color/3b5998
-
 
 ==
 
@@ -115,8 +114,6 @@ figure h4 {
 
     }
 
-
-
     /*==========  Non-Mobile First Method  ==========*/
 
     /* Large Devices, Wide Screens */
@@ -168,16 +165,17 @@ console.info( $window.innerHeight );
 
 ==
 
-## three.js
-
-- http://threejs.org/
-
-
-==
-
 ## Font pairs
 
 - http://briangardner.com/google-font-combinations/
 - http://femmebot.github.io/google-type/
 - http://fontpair.co/
 
+==
+
+## Facebook swatch
+
+- http://colorswatches.info/facebook-blue/
+- http://www.color-hex.com/color/3b5998
+
+==
