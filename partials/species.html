@@ -20,7 +20,7 @@
           <h4>{{ bee.name }}</h4>
           <hr>
           <p>
-            {{ bee.desc | limitTo: 123 }} {{ bee.length < 123 ? '' : '...' }}
+            {{ bee.desc | limitTo: 123 }}<span ng-if="bee.desc.length > 123">&hellip;</span>
           </p>
         </div>
 
@@ -36,6 +36,7 @@
 
     </div>
   </div>
+
   <app-footer></app-footer>
 
 </div>

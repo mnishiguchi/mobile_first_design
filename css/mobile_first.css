@@ -11,9 +11,9 @@
 
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
@@ -74,7 +74,7 @@ a:hover {
 .wrapper {
   display: block;
   width: 90%;
-  margin: 0 auto ;
+  margin: 0 auto;
 }
 /* This is a section inside of the wrapper */
 .row {
@@ -111,11 +111,14 @@ a:hover {
   letter-spacing: -1px;
   color: white;
   cursor: default;  /* Default cursor instead of the finger pointing */
+  text-align: left;
 }
-#logo~p {
+#logo~p {  /* paragraph that is a sibling of #logo */
   margin-top: -5px;
   padding: 3px 0;
   line-height: 1.5em;
+  cursor: default;  /* Default cursor instead of the finger pointing */
+  text-align: left;
 }
 hgroup {
   float: left;
@@ -151,6 +154,7 @@ nav li a {
   height: 40px;
   padding: 0 12px;
   color: white;
+  transition: color 0.6s, background 0.6s;
 }
 nav li a.active {
   background: none;
@@ -167,11 +171,12 @@ nav li a.active:hover {
 }
 .hamburger {
   position: absolute;
-  right: 16px;
+  right: 12px;
   top: 20px;
   width: 32px;
   height: 32px;
   visibility: visible;
+  cursor: pointer;
 }
 .hamburger:hover {
   border: 1px solid yellow;
@@ -186,7 +191,7 @@ nav li a.active:hover {
 #jumbotron {
   display: block;
   height: 200px;
-  margin: 0 -10%;
+  margin: 0 auto;
   margin-bottom: 20px;
   background: url("../img/beehive.jpg");
   background-size: cover;
@@ -208,6 +213,34 @@ footer {
   border-top: 1px solid #afbdd4;
   margin-top: 40px;
 }
+
+
+/*
+  ng-animate
+  - http://ng.malsup.com/#!/css-animations-for-ng-hide_ng-show
+ */
+
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important; /* yes, important */
+}
+.cssSlideUp {
+    transition: .5s linear all;
+    height: 250px;
+}
+.cssSlideUp.ng-hide {
+    height: 0;
+}
+/*
+.cssFade {
+    transition: 0.5s linear all;
+    opacity: 1;
+}
+.cssFade.ng-hide {
+    opacity: 0;
+}
+*/
 
 
 /*
@@ -244,10 +277,12 @@ figure .read-more {
   color: #3b5998;
 }
 
+
 /*==========  Custom, iPhone Retina  ==========*/
 @media only screen and (min-width : 320px) {
 
 }
+
 
 /*==========  Extra Small Devices, Phones  ==========*/
 @media only screen and (min-width : 480px) {
@@ -258,6 +293,10 @@ figure .read-more {
    */
 
 
+  #logo,
+  #logo~p {  /* paragraph that is a sibling of #logo */
+    text-align: center;
+  }
   hgroup {
     display: block;
     margin-top: 10px;
@@ -337,6 +376,10 @@ figure .read-more {
    */
 
 
+  #logo,
+  #logo~p {  /* paragraph that is a sibling of #logo */
+    text-align: left;
+  }
   hgroup {
     display: inline-block;
     margin-top: 10px;
@@ -410,6 +453,8 @@ figure .read-more {
     height: 200px;
   }
 }
+
+
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
 

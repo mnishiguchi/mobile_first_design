@@ -1,12 +1,11 @@
 <div id="app-navbar">
   <div class="wrapper">
     <hgroup>
-
       <!-- Hamburger button -->
       <button type="button"
-         class="hamburger"
-         ng-click="$ctrl.toggleMenu()"
-         ng-show="$ctrl.isMobile">
+        class="hamburger"
+        ng-click="$ctrl.toggleMenu()"
+        ng-show="$ctrl.isMobile">
         &#9776;
       </button>
 
@@ -16,7 +15,7 @@
       </a>
     </hgroup>
 
-    <nav ng-show="$ctrl.isShownMenu">
+    <nav ng-show="$ctrl.isVisibleMenu" id="app-navbar--nav">
       <ul>
         <li ng-repeat="page in $ctrl.pages track by $index" >
 
@@ -29,5 +28,5 @@
         </li>
       </ul>
     </nav>
-  </div>
+  </div><!-- wrapper -->
 </div>

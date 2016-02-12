@@ -7,7 +7,8 @@
 
   angular
     .module( "app", [
-      "ngRoute"
+      "ngRoute",
+      "ngAnimate"
     ]);
 
 
@@ -144,6 +145,7 @@
     function AppNavbarController( $route, $location, $window, $scope ) {
 
       var breakpoint = 480;
+      var navElem;        // The angular element of the navigation menu.
 
       var vm  = this;
 
@@ -151,8 +153,12 @@
                           // title: The same as the page title.
       vm.activeTab;       // The name of the active tab.
       vm.isMobile;        // The current display type.
-      vm.isShownMenu;     // The visibility of hamburger button.
-      vm.toggleMenu  = function() { vm.isShownMenu = ! vm.isShownMenu };
+      vm.isVisibleMenu;   // The visibility of hamburger button.
+
+
+      // Expose the public methods.
+      vm.toggleMenu = toggleMenu;
+
 
       // Initialize the state of the navbar.
       handleResizing();
@@ -162,7 +168,7 @@
       angular.element( $window ).on('resize', function() {
 
         // Update the state of the navbar
-        $scope.$apply( function() { handleResizing(); });
+        $scope.$apply( function() { handleResizing(); } );
 
       });
 
@@ -184,6 +190,7 @@
         }
        */
 
+
       // Extract paths from routes info.
       angular.forEach( $route.routes, function( value, key ) {
 
@@ -204,6 +211,30 @@
 
 
       // ---
+      // PUBLIC METHODS
+      // ---
+
+
+      /**
+       * Toggles the nav menu with animation effect.
+       */
+      function toggleMenu() {
+
+        // If not done already, find the nav element and add the animation class.
+        if ( ! navElem ) {
+
+          navElem = angular.element( document.querySelector( '#app-navbar--nav' ) );
+          navElem.addClass( "cssSlideUp" );
+
+        }
+
+        // Toggle the visibility.
+        vm.isVisibleMenu = ! vm.isVisibleMenu;
+
+      };
+
+
+      // ---
       // PRIVATE METHODS
       // ---
 
@@ -213,8 +244,8 @@
        */
       function handleResizing() {
 
-        vm.isMobile    = ( $window.innerWidth < breakpoint ) ? true : false;
-        vm.isShownMenu = ( vm.isMobile ) ? false : true;
+        vm.isMobile      = ( $window.innerWidth < breakpoint ) ? true : false;
+        vm.isVisibleMenu = ( vm.isMobile ) ? false : true;
 
       }
 
