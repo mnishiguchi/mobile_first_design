@@ -6,7 +6,7 @@
 <div class="wrapper">
 
   <div  class="row">
-    <div class="three-columns">
+    <div class="columns-max-3">
       <figure ng-repeat="bee in vm.data_1">
 
         <a ng-href="{{ bee.linkUrl }}">
@@ -22,9 +22,6 @@
           <p>
             {{ bee.desc | limitTo: 123 }}<span ng-if="bee.desc.length > 123">&hellip;</span>
           </p>
-
-          <pre>{{ bee.desc.length | json }}</pre>
-
           <a
             ng-href="{{ bee.linkUrl }}"
             class="read-more">
@@ -39,7 +36,7 @@
   <hr>
 
   <div  class="row">
-    <div class="five-columns">
+    <div class="columns-max-5">
 
       <figure ng-repeat="bee in vm.data_2">
 

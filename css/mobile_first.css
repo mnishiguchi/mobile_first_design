@@ -51,6 +51,7 @@ h1 {
   font-size: 2.5em;
 }
 h1.page-header {
+  font-family: Helvetica, Verdana, sans-serif;
   padding-bottom: 20px;
 }
 /*
@@ -60,7 +61,7 @@ h3 { font-size: 1.7em; }
 h4 { font-size: 1.2em; }
 p  {
   font-size: 0.9em;
-  line-height: 1.3em;
+  line-height: 1.7em;
   color: #6d84b4
 }
 a {
@@ -73,7 +74,7 @@ a:hover {
 /* Adjust the block width responsively */
 .wrapper {
   display: block;
-  width: 90%;
+  width: 94%;
   margin: 0 auto;
 }
 /* This is a section inside of the wrapper */
@@ -232,15 +233,6 @@ footer {
 .cssSlideUp.ng-hide {
     height: 0;
 }
-/*
-.cssFade {
-    transition: 0.5s linear all;
-    opacity: 1;
-}
-.cssFade.ng-hide {
-    opacity: 0;
-}
-*/
 
 
 /*
@@ -270,6 +262,7 @@ figure .description,
 figure .description p {
   vertical-align: top;
   overflow: hidden;
+  line-height: 1.3em;
 }
 figure .read-more {
   display: block;
@@ -278,10 +271,15 @@ figure .read-more {
 }
 
 
-/*==========  Custom, iPhone Retina  ==========*/
-@media only screen and (min-width : 320px) {
-
+/* This removes unnecessary margin of first and last columns */
+.columns-max-3,
+.columns-max-5 {
+  margin: 0 -1.1%;
 }
+
+
+/*==========  Custom, iPhone Retina  ==========*/
+/*@media only screen and (min-width : 320px) {}*/
 
 
 /*==========  Extra Small Devices, Phones  ==========*/
@@ -325,45 +323,51 @@ figure .read-more {
   }
 
 
-  /* This removes unnecessary margin of first and last columns */
-  .three-columns
-  .five-columns {
-    margin: 0 -1.1%;
+  /*
+    All figures
+  */
+
+
+  figure .description,
+  figure .description p {
+    line-height: 1.5em;
   }
 
 
   /*
-    .three-columns
+    .columns-max-3
    */
 
 
-  .three-columns figure img {
+  .columns-max-3 figure img {
     width: 100%;
     display: inline-block;
     width: 38%;
     padding-right: 10px;
   }
-  .three-columns figure .description {
+  .columns-max-3 figure .description {
     display: inline-block;
     width: 60%;
   }
 
 
+
   /*
-    .five-columns
+    .columns-max-5
    */
 
 
-  .five-columns figure {
-    width: 31.33%;
+  .columns-max-5 figure {
+    width: 48%;
   }
-  .five-columns figure img {
+  .columns-max-5 figure img {
     width: 100%;
   }
-  .five-columns figure .description {
+  .columns-max-5 figure .description {
     height: 200px;
     overflow: hidden;
   }
+
 
 }
 
@@ -415,22 +419,40 @@ figure .read-more {
 
 
   /*
-    .three-columns
+    .columns-max-3
    */
 
 
-  .three-columns figure {
+  .columns-max-3 figure {
     width: 31.33%;
   }
-  .three-columns figure img {
+  .columns-max-3 figure img {
     width: 100%;
   }
-  .three-columns figure .description {
+  .columns-max-3 figure .description {
     width: 100%;
   }
-  .three-columns figure .description p {
+  .columns-max-3 figure .description p {
     height: 100px;
   }
+
+
+  /*
+    .columns-max-5
+   */
+
+
+  .columns-max-5 figure {
+    width: 23%;
+  }
+  .columns-max-5 figure img {
+    width: 100%;
+  }
+  .columns-max-5 figure .description {
+    height: 200px;
+    overflow: hidden;
+  }
+
 
 }
 
@@ -440,16 +462,16 @@ figure .read-more {
 
 
   /*
-    .five-columns
+    .columns-max-5
    */
 
 
-  .five-columns figure {
+  .columns-max-5 figure {
     width: 18%;
   }
-  .five-columns figure img {
+  .columns-max-5 figure img {
   }
-  .five-columns figure .description p {
+  .columns-max-5 figure .description p {
     height: 200px;
   }
 }

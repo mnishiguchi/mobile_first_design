@@ -145,7 +145,9 @@
     function AppNavbarController( $route, $location, $window, $scope ) {
 
       var breakpoint = 480;
-      var navElem;        // The angular element of the navigation menu.
+
+      // Store the reference to the angular element of the navigation menu.
+      var navElem;
 
       var vm  = this;
 
@@ -220,13 +222,7 @@
        */
       function toggleMenu() {
 
-        // If not done already, find the nav element and add the animation class.
-        if ( ! navElem ) {
-
-          navElem = angular.element( document.querySelector( '#app-navbar--nav' ) );
-          navElem.addClass( "cssSlideUp" );
-
-        }
+        addAnimation();
 
         // Toggle the visibility.
         vm.isVisibleMenu = ! vm.isVisibleMenu;
@@ -247,7 +243,38 @@
         vm.isMobile      = ( $window.innerWidth < breakpoint ) ? true : false;
         vm.isVisibleMenu = ( vm.isMobile ) ? false : true;
 
-      }
+        removeAnimation();
+
+      } // end handleResizing
+
+
+      /**
+       * Sets up animation.
+       */
+      function addAnimation() {
+
+        // If not done already,
+        // - find the nav element and
+        // - add the animation class.
+        if ( ! navElem ) {
+
+          navElem = angular.element( document.querySelector( '#app-navbar--nav' ) );
+          navElem.addClass( "cssSlideUp" );
+
+        }
+
+      } // end addAnimation
+
+
+      /**
+       * Removes animation.
+       */
+      function removeAnimation() {
+
+        if ( navElem && ! vm.isMobile ) { navElem.removeClass( "cssSlideUp" ); }
+
+      } // end removeAnimation
+
 
     } // end AppNavbarController
 
