@@ -149,6 +149,8 @@
       // Store the reference to the angular element of the navigation menu.
       var navElem;
 
+      var animationClass = "cssSlideUp";
+
       var vm  = this;
 
       vm.pages = [];      // path:  The "#" paths, e.g., "#/about".
@@ -240,6 +242,7 @@
        */
       function handleResizing() {
 
+        // Update the state.
         vm.isMobile      = ( $window.innerWidth < breakpoint ) ? true : false;
         vm.isVisibleMenu = ( vm.isMobile ) ? false : true;
 
@@ -253,15 +256,15 @@
        */
       function addAnimation() {
 
-        // If not done already,
-        // - find the nav element and
-        // - add the animation class.
+        // If not done already, find the nav element and
         if ( ! navElem ) {
 
           navElem = angular.element( document.querySelector( '#app-navbar--nav' ) );
-          navElem.addClass( "cssSlideUp" );
 
         }
+
+        // Add the animation class.
+        navElem.addClass( animationClass );
 
       } // end addAnimation
 
@@ -271,10 +274,13 @@
        */
       function removeAnimation() {
 
-        if ( navElem && ! vm.isMobile ) { navElem.removeClass( "cssSlideUp" ); }
+        if ( navElem && navElem.hasClass( animationClass ) ) {
+
+          navElem.removeClass( animationClass );
+
+        }
 
       } // end removeAnimation
-
 
     } // end AppNavbarController
 
@@ -307,7 +313,7 @@
       name: "Evolution",
       imgUrl: "img/fossil.jpg",
       linkUrl: "https://en.wikipedia.org/wiki/Bee#Evolution",
-      desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar"
+      desc: "Melittosphex burmensis, a fossil bee preserved in amber from the Early Cretaceous of Myanmar."
     },
     {
       name: "Sociality",
